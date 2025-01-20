@@ -1,4 +1,4 @@
-name: PHP Composer
+name: Tests
 
 on:
   push:
@@ -32,8 +32,9 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+    - name: Execute tests (Unit, Feature, and Architecture tests) via PestPHP
+      run: vendor/bin/pest
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Run PHPCS lint checking for PSR-2
+      run: vendor/bin/phpcs
+
