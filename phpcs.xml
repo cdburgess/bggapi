@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Coding Standard">
+    <description>Coding Standards</description>
+    <rule ref="PSR2"/>
+    <file>src</file>
+</ruleset>
