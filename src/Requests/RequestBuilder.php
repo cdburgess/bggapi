@@ -29,6 +29,9 @@ abstract class RequestBuilder
      */
     public function __call($name, $arguments)
     {
+        if (is_array($arguments[0])) {
+            $arguments[0] = implode(',', $arguments[0]);
+        }
         return $this->addQueryParam($name, $arguments[0]);
     }
 
