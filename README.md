@@ -38,6 +38,15 @@ $data = $thing->id(167355)
     ->send();
 ```
 
+There are a number of quests that accept multiple elements.  This can be accomplished by passing
+these ids as an array.
+
+```php
+$thing = new Thing();
+$data = $thing->id([167355, 167356, 167357])
+    ->send();
+```
+
 ## Data Formats
 By default, the request will return a `SimpleXMLElement` file.
 There are two other supported formats: array and JSON. You can request 
